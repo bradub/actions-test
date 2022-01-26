@@ -23,7 +23,7 @@ jobs:
 
       - name: No If
         run: |
-          echo $steps.changed-files-specific.outputs.any_changed
+          echo ${{ steps.changed-files-specific.outputs.any_changed }}
 
       - name: Check
         if: steps.changed-files-specific.outputs.any_changed == 'true'
