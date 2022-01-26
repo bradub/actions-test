@@ -1,0 +1,21 @@
+name: test
+
+on:
+  push:
+
+jobs:
+  migrate:
+    name: tst
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get specific changed files
+        uses: tj-actions/changed-files@v13
+        with:
+          files: |
+            /dir/inside_dir/**
+            /sql/file.txt
+
+      - name: Check
+        if: steps.changed-files-specific.outputs.any_changed == true
+        run: |
+          echo yes
