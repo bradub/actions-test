@@ -17,8 +17,8 @@ jobs:
         uses: tj-actions/changed-files@v13
         with:
           files: |
-            /dir/inside_dir/**
-            /dir/file.txt
+            dir/inside_dir/**
+            dir/file.txt
 
       - name: Check
         if: steps.changed-files-specific.outputs.any_changed == 'true'
