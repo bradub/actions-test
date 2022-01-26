@@ -14,11 +14,12 @@ jobs:
           fetch-depth: 2
 
       - name: Get specific changed files
-        uses: tj-actions/changed-files@v13
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v14.1
         with:
           files: |
             dir/inside_dir/**
-            dir/file.txt
+            **/dir/file.txt
             file.txt
 
       - name: No If
