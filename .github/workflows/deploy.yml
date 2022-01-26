@@ -19,6 +19,7 @@ jobs:
           files: |
             dir/inside_dir/**
             dir/file.txt
+            file.txt
 
       - name: Check
         if: steps.changed-files-specific.outputs.any_changed == 'true'
