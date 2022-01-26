@@ -26,6 +26,9 @@ jobs:
           echo ${{ steps.changed-files-specific.outputs.any_changed }}
           echo ${{ steps.changed-files.outputs.any_changed }}
           echo ${{ steps.changed-files.outputs.modified_files }}
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
 
       - name: Check
         if: steps.changed-files-specific.outputs.any_changed == 'true'
